@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebCrab Refer & Earn</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --purple:#6a3cff;
+  --purple-dark:#4b2bc9;
+  --bg:#f5f3ff;
+  --white:#ffffff;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:linear-gradient(180deg,var(--purple),var(--purple-dark));
+  min-height:100vh;
+  color:#333;
+}
+
+.wrapper{
+  max-width:420px;
+  margin:auto;
+  padding:20px 15px 40px;
+}
+
+.header{
+  text-align:center;
+  color:#fff;
+  margin-bottom:25px;
+}
+
+.header h1{
+  font-size:26px;
+  font-weight:700;
+}
+
+.header h1 span{
+  color:#ffe9ff;
+}
+
+.header p{
+  font-size:14px;
+  opacity:.9;
+  margin-top:6px;
+}
+
+.card{
+  background:var(--white);
+  border-radius:18px;
+  padding:20px;
+  margin-bottom:18px;
+  box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+.reward{
+  text-align:center;
+  font-size:20px;
+  font-weight:600;
+  color:var(--purple);
+}
+
+.reward small{
+  display:block;
+  font-size:13px;
+  font-weight:400;
+  color:#666;
+  margin-top:4px;
+}
+
+.steps{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin-top:15px;
+}
+
+.step{
+  background:var(--bg);
+  border-radius:14px;
+  padding:15px 10px;
+  text-align:center;
+  font-size:13px;
+}
+
+.step strong{
+  display:block;
+  font-size:18px;
+  color:var(--purple);
+  margin-bottom:5px;
+}
+
+form{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  margin-top:15px;
+}
+
+input{
+  padding:14px;
+  border-radius:12px;
+  border:1px solid #ddd;
+  font-size:14px;
+}
+
+input:focus{
+  outline:none;
+  border-color:var(--purple);
+}
+
+button{
+  padding:15px;
+  border:none;
+  border-radius:14px;
+  background:var(--purple);
+  color:#fff;
+  font-size:16px;
+  font-weight:600;
+  cursor:pointer;
+  transition:.3s;
+}
+
+button:hover{
+  background:var(--purple-dark);
+}
+
+.note{
+  font-size:12px;
+  color:#777;
+  margin-top:10px;
+  text-align:center;
+}
+
+.footer{
+  text-align:center;
+  font-size:12px;
+  color:#eee;
+  margin-top:25px;
+}
+
+/* Desktop Enhancement */
+@media(min-width:768px){
+  .wrapper{
+    max-width:600px;
+  }
+  .steps{
+    grid-template-columns:repeat(4,1fr);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+  <!-- Header -->
+  <div class="header">
+    <h1><span>WebCrab</span> Refer & Earn</h1>
+    <p>Invite friends & earn money from internships and courses</p>
+  </div>
+
+  <!-- Reward -->
+  <div class="card">
+    <div class="reward">
+      🎯 5 Referrals = ₹50 INR
+      <small>No limit on earnings</small>
+    </div>
+  </div>
+
+  <!-- Steps -->
+  <div class="card">
+    <h3 style="text-align:center;color:#444;">How It Works</h3>
+    <div class="steps">
+      <div class="step"><strong>1</strong>Share your referral link</div>
+      <div class="step"><strong>2</strong>Friend enrolls</div>
+      <div class="step"><strong>3</strong>Complete 5 referrals</div>
+      <div class="step"><strong>4</strong>Withdraw ₹50</div>
+    </div>
+  </div>
+
+  <!-- Withdrawal -->
+  <div class="card">
+    <h3 style="text-align:center;color:#444;">Withdrawal Request</h3>
+
+    <form id="withdrawForm">
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email Address" required>
+      <input type="text" placeholder="UPI ID (example@upi)" required>
+      <input type="file" accept="image/*" required>
+      <button type="submit">Submit Proof</button>
+    </form>
+
+    <p class="note">
+      Screenshot must clearly show 5 successful referrals.  
+      Fake or edited proofs will be rejected.
+    </p>
+  </div>
+
+  <div class="footer">
+    © 2026 WebCrab • Learn • Build • Earn
+  </div>
+
+</div>
+
+<script>
+document.getElementById("withdrawForm").addEventListener("submit",function(e){
+  e.preventDefault();
+  alert("✅ Submission received!\nOur team will verify your referral proof shortly.");
+  this.reset();
+});
+</script>
+
+</body>
+</html>
